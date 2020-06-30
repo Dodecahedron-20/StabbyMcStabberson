@@ -7,24 +7,41 @@ public class Mob : MonoBehaviour
     public int HitPoints;
 
 
-    private Vector3 MobPos = new Vector3(7, -3, 0);
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        //movement that doesn't work
+        transform.position = new Vector3(6, -3, 0);
+
+        Vector3 newPosition = transform.position;
+        newPosition.y = 100;
+        transform.position = newPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //more not-working movement things
+        transform.position += new Vector3(1 * Time.deltaTime, 0, 0);
+
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        ReduceHitPoints();
+        
+        {
+            Destroy(gameObject);
+        }
+        
+        
+        
+        
+        
+        
     }
 
     private void ReduceHitPoints()
@@ -38,7 +55,7 @@ public class Mob : MonoBehaviour
 
     public void KillMob()
     {
-        Destroy(gameObject);
+      
 
     }
 

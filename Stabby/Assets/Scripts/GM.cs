@@ -7,6 +7,11 @@ public class GM : MonoBehaviour
 
     public static GM instance = null;
 
+
+
+
+
+
     private void Start()
     {
         if (instance == null)
