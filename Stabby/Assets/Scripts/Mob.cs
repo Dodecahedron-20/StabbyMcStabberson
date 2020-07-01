@@ -6,26 +6,20 @@ public class Mob : MonoBehaviour
 {
     public int HitPoints;
 
-
-    
+    public static int movespeed = 1;
+    public Vector3 userDirection = Vector3.right;
 
     // Start is called before the first frame update
     void Start()
     {
        
-        //movement that doesn't work
-        transform.position = new Vector3(6, -3, 0);
-
-        Vector3 newPosition = transform.position;
-        newPosition.y = 100;
-        transform.position = newPosition;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        //more not-working movement things
-        transform.position += new Vector3(1 * Time.deltaTime, 0, 0);
+        transform.Translate(userDirection * movespeed * Time.deltaTime);
 
     }
 
@@ -34,7 +28,7 @@ public class Mob : MonoBehaviour
     {
         
         {
-            Destroy(gameObject);
+            ReduceHitPoints();
         }
         
         
@@ -55,7 +49,7 @@ public class Mob : MonoBehaviour
 
     public void KillMob()
     {
-      
+        Destroy(gameObject);
 
     }
 

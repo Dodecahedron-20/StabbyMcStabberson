@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    
+  
 
-    private Vector3 playerPos = new Vector3(0, -3, 0);
 
-    public float MoveSpeed = 1;
+    //testing invokes shorter than 1
+
+    private float endMove = 0.1f;
+
+    //sword things go here
+
+    public GameObject LeftSword;
+    public GameObject RightSword;
+    public GameObject Shield;
 
     // Start is called before the first frame update
     void Start()
@@ -21,25 +30,73 @@ public class PlayerControl : MonoBehaviour
       
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            LeftSword.SetActive(true);
+            Invoke("SwordLeftOff", endMove);
 
+            transform.position += Vector3.left;
+
+            RightSword.SetActive(false);
+            Shield.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            RightSword.SetActive(true);
+            Invoke("SwordRightOff", endMove);
 
+            transform.position += Vector3.right;
+
+            LeftSword.SetActive(false);
+            Shield.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Shield.SetActive(true);
+            Invoke("ShieldOff", 1);
+            
 
+            
+            LeftSword.SetActive(false);
+            RightSword.SetActive(false);
         }
 
-        float xPos = transform.position.x + (Input.GetAxisRaw("Horizontal") * MoveSpeed * Time.deltaTime);
-        playerPos = new Vector3(Mathf.Clamp(xPos, -7.4f, 7.4f), -3f, 0f);
-        transform.position = playerPos;
-
+        
 
 
 
     }
+
+
+    private void SwordLeftOff()
+    {
+        LeftSword.SetActive(false);
+
+
+
+    }
+
+    private void SwordRightOff()
+    {
+        RightSword.SetActive(false);
+
+
+
+    }
+
+    private void ShieldOff()
+    {
+        Shield.SetActive(false);
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
