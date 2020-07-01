@@ -6,7 +6,7 @@ public class PlayerDamage : MonoBehaviour
 {
 
 
-    public GameObject ACube;
+  
     public ParticleSystem Damage;
 
 
@@ -33,7 +33,7 @@ public class PlayerDamage : MonoBehaviour
 
    private void DamagePlayer()
     {
-        ACube.SetActive(true);
+       
         Damage.Play();
         GM.instance.LooseLife();
     }
