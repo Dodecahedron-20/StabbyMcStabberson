@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    
-  
+
+    public bool PausedMenuActive = false;
 
 
     //testing invokes shorter than 1
@@ -28,7 +28,9 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
       
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+      
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && PausedMenuActive == false)
         {
             LeftSword.SetActive(true);
             Invoke("SwordLeftOff", endMove);
@@ -39,7 +41,7 @@ public class PlayerControl : MonoBehaviour
             Shield.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && PausedMenuActive == false)
         {
             RightSword.SetActive(true);
             Invoke("SwordRightOff", endMove);
@@ -50,7 +52,7 @@ public class PlayerControl : MonoBehaviour
             Shield.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && PausedMenuActive == false)
         {
             Shield.SetActive(true);
             Invoke("ShieldOff", 1);
@@ -94,8 +96,10 @@ public class PlayerControl : MonoBehaviour
 
 
 
-
-
+    public void Freeze()
+    {
+        PausedMenuActive = true;
+    }
 
 
 

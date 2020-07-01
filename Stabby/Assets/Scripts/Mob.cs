@@ -6,7 +6,7 @@ public class Mob : MonoBehaviour
 {
     public int HitPoints;
 
-    public static int movespeed = 1;
+    public float movespeed;
     public Vector3 userDirection = Vector3.right;
 
     // Start is called before the first frame update

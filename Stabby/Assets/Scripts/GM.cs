@@ -51,8 +51,14 @@ public class GM : MonoBehaviour
     {
         gameOver.SetActive(true);
         Invoke("EndGame", 1);
+
+      
     }
 
+    private void timeFreeze()
+    {
+        Time.timeScale = 0;
+    }
 
 
     void EndGame()
@@ -74,6 +80,7 @@ public class GM : MonoBehaviour
     {
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
+        GetComponent<PlayerControl>().Freeze();
     }
 
 
