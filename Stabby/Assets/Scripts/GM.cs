@@ -43,6 +43,7 @@ public class GM : MonoBehaviour
         if (Lives < 1)
         {
             GameOver();
+     
         }
     }
 
@@ -80,9 +81,23 @@ public class GM : MonoBehaviour
     {
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
-        GetComponent<PlayerControl>().Freeze();
     }
 
+    public void UnPauseMenu()
+    {
+        Time.timeScale = 1;
+        PauseMenu.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void Done()
+    {
+        SceneManager.LoadScene("Title");
+    }
 
     public void LooseLife()
     {

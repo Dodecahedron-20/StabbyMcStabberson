@@ -7,13 +7,13 @@ public class Mob : MonoBehaviour
     public int HitPoints;
 
     public float movespeed;
-    public Vector3 userDirection = Vector3.right;
+    public Vector2 userDirection = Vector2.right;
 
     // Start is called before the first frame update
     void Start()
     {
-       
-       
+
+
     }
 
     // Update is called once per frame
@@ -24,11 +24,15 @@ public class Mob : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.collider.name == "Sword")
+        {
+            ReduceHitPoints();
+        }
 
 
-        ReduceHitPoints();
+
 
 
 
@@ -49,9 +53,6 @@ public class Mob : MonoBehaviour
 
     }
 
-
-
-
-
-
 }
+
+   

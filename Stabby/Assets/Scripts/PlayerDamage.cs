@@ -26,12 +26,21 @@ public class PlayerDamage : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        DamagePlayer();
+        if (col.gameObject.name == "Mob")
+        {
+            DamagePlayer();
+        }
+
+
     }
 
-   private void DamagePlayer()
+
+
+
+    private void DamagePlayer()
     {
        
         Damage.Play();

@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour
     {
       
       
+        if(Time.timeScale == 0)
+        {
+            PausedMenuActive = true;
+
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && PausedMenuActive == false)
         {
@@ -63,8 +68,8 @@ public class PlayerControl : MonoBehaviour
             RightSword.SetActive(false);
         }
 
-        
 
+        
 
 
     }
@@ -95,12 +100,10 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-
-    public void Freeze()
+    public void Death()
     {
-        PausedMenuActive = true;
+        Destroy(gameObject);
     }
-
 
 
 }
