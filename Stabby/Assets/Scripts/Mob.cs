@@ -26,16 +26,12 @@ public class Mob : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        {
-            ReduceHitPoints();
-        }
-        
-        
-        
-        
-        
-        
+
+
+        ReduceHitPoints();
+
+
+
     }
 
     private void ReduceHitPoints()

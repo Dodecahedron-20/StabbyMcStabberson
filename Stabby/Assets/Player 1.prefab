@@ -5001,7 +5001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb37f59552bd4d409b53c3372ce34f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ACube: {fileID: 8047541490460880996}
   Damage: {fileID: 3588960642723976618}
 --- !u!1 &8047541490460880996
 GameObject:
@@ -5297,10 +5296,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6619887248872920768, guid: 7febd7dda68d38946949930c823dee59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 3671071529508053448, guid: 7febd7dda68d38946949930c823dee59,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3671071529508053448, guid: 7febd7dda68d38946949930c823dee59,
         type: 3}
@@ -5383,10 +5387,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6619887248872920768, guid: 7febd7dda68d38946949930c823dee59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 3671071529508053448, guid: 7febd7dda68d38946949930c823dee59,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3671071529508053448, guid: 7febd7dda68d38946949930c823dee59,
         type: 3}
