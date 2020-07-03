@@ -8,6 +8,9 @@ public class PlayerControl : MonoBehaviour
     public bool PausedMenuActive = false;
     private Rigidbody2D rb;
 
+    public Animator Anim;
+    public SpriteRenderer sr;
+
     public bool Move;
 
     //testing invokes shorter than 1
@@ -47,6 +50,11 @@ public class PlayerControl : MonoBehaviour
             {
                 Move = true;
                 LeftSword.SetActive(true);
+                Anim.SetTrigger("Swing");
+                if (sr.flipX)
+                {
+                    sr.flipX = false;
+                }
                 Invoke("SwordLeftOff", endMove);
 
                 transform.position += Vector3.left;
@@ -57,6 +65,11 @@ public class PlayerControl : MonoBehaviour
             {
                 Move = true;
                 RightSword.SetActive(true);
+                Anim.SetTrigger("Swing");
+                if (!sr.flipX)
+                {
+                    sr.flipX = true;
+                }
                 Invoke("SwordRightOff", endMove);
 
                 transform.position += Vector3.right;
@@ -69,6 +82,7 @@ public class PlayerControl : MonoBehaviour
             {
                 Move = true;
                 Shield.SetActive(true);
+                Anim.SetTrigger("Shield");
                 Invoke("ShieldOff", 1);
 
 

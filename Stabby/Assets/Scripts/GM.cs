@@ -9,7 +9,7 @@ public class GM : MonoBehaviour
 
     public static GM instance = null;
 
-    public int Lives = 3;
+    public int Lives = 6;
 
 
     public GameObject PauseMenu;
@@ -71,7 +71,7 @@ public class GM : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Escape))
         {
             PausedMenu();
         }

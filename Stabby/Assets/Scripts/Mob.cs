@@ -9,6 +9,8 @@ public class Mob : MonoBehaviour
     public float movespeed;
     public Vector2 userDirection = Vector2.right;
 
+    public ParticleSystem Death;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +54,9 @@ public class Mob : MonoBehaviour
 
     public void KillMob()
     {
+        Death.Play();
         Destroy(gameObject);
-
+        
     }
 
 }
