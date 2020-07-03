@@ -31,7 +31,10 @@ public class Mob : MonoBehaviour
             ReduceHitPoints();
         }
 
+    else
+        {
 
+        }
 
 
 
